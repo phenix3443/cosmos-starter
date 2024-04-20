@@ -14,8 +14,6 @@
 
 syntax = "proto3";
 
-option go_package = "github.com/phenix3443/cosmos-starter/greeter";
-
 
 package greeter;
 

@@ -1,15 +1,17 @@
 version: v1
 managed:
-  # enabled: true
-  # go_package_prefix:
-  #   default: github.com/bufbuild/buf-tour/gen
+  enabled: true
+  go_package_prefix:
+    default: github.com/phenix3443/cosmos-starter
 plugins:
-  - plugin: go
+  # Use protoc-gen-go at v1.31.0  
+  - plugin: buf.build/protocolbuffers/go:v1.31.0
     out: .
-    opt: module=github.com/phenix3443/cosmos-starter
-  - plugin: go-grpc
+    opt: 
+      - module=github.com/phenix3443/cosmos-starter
+  # Use the latest version of protoc-gen-go-grpc
+  - plugin: buf.build/grpc/go
     out: .
     opt:
       - module=github.com/phenix3443/cosmos-starter
-
 
