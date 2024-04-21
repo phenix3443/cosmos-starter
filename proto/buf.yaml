@@ -5,3 +5,6 @@ breaking:
 lint:
   use:
     - DEFAULT
+  except:
+    - SERVICE_SUFFIX
+    - PACKAGE_VERSION_SUFFIX
