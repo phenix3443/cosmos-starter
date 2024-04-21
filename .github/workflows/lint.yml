@@ -39,3 +39,16 @@ jobs:
           version: latest
           skip-pkg-cache: true
           args: --timeout=99m
+
+  lint-protos:
+    name: buf-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository 
+        uses: actions/checkout@v4
+      - name: Set up Buf
+        uses: bufbuild/buf-setup-action@v1
+      - name:  Lint proto files
+        uses: bufbuild/buf-lint-action@v1
+        with:
+          input: proto
